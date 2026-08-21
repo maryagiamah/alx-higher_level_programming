@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Delete value in dict."""
 
+
 def complex_delete(a_dictionary, value):
 
     for key, val in list(a_dictionary.items()):

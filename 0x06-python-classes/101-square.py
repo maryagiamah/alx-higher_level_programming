@@ -28,9 +28,12 @@ class Square():
         if self.__size == 0:
             return ""
 
-        square_str = ["\n" * self.__position[1]]
+        square_str = []
 
-        for x in range(self.__size):
+        for _ in range(self.__position[1]):
+            square_str.append("")
+
+        for _ in range(self.__size):
             square_str.append(' ' * self.__position[0] + '#' * self.__size)
 
         return '\n'.join(square_str)
@@ -42,9 +45,9 @@ class Square():
 
     @size.setter
     def size(self, value):
-        if type(value) is int:
+        if type(value) is not int:
             raise TypeError("size must be an integer")
-        if value >= 0:
+        if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 

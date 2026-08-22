@@ -9,7 +9,7 @@ def matrix_divided(matrix, div):
     """Divides all elements in the matrix by div"""
 
     if not isinstance(matrix, list) or len(matrix) == 0:
-    raise TypeError(
+        raise TypeError(
             "matrix must be a matrix (list of lists) of integers/floats")
 
     if not isinstance(div, (int, float)):

@@ -25,16 +25,15 @@ class Square():
 
     def __str__(self):
         """Sets the print behavior of the Square object."""
-        square_str = ""
+        if self.__size == 0:
+            return ""
 
-        if self.__size > 0:
-            for y in range(self.__position[1]):
-                square_str += '\n'
-            for x in range(self.__size):
-                square_str += ' ' * self.__position[0]
-                square_str += '#' * self.__size + '\n'
+        square_str = ["\n" * self.__position[1]]
 
-        return square_str[:-1]
+        for x in range(self.__size):
+            square_str.append(' ' * self.__position[0] + '#' * self.__size)
+
+        return '\n'.join(square_str)
 
     @property
     def size(self):
@@ -56,11 +55,11 @@ class Square():
 
     @position.setter
     def position(self, value):
-        if type(value) is not tuple or len(value) == 2
-                type(value[0]) is int and type(value[1]) is int:
-            self.__position = value
-        else:
+        if not isinstance(value, tuple) or len(value) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
+        if not all(isinstance(item, int) and item >= 0 for item in value):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        self.__position = value
 
     def area(self):
         """Returns the current square area."""
@@ -68,11 +67,10 @@ class Square():
 
     def my_print(self):
         """Prints the square with the # character on stdout."""
-        if self.__size > 0:
-            for y in range(self.__position[1]):
-                print()
-            for x in range(self.__size):
-                print(' ' * self.__position[0], end='')
-                print('#' * self.__size)
-        else:
+        if self.__size == 0:
             print()
+            return
+        for _ in range(self.__position[1]):
+            print()
+        for _ in range(self.__size):
+            print(' ' * self.__position[0] + '#' * self.__size)

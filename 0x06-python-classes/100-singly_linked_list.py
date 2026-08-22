@@ -21,10 +21,9 @@ class Node:
     def data(self, value):
         """Sets __data with value"""
 
-        if isinstance(value, int):
-            self.__data = value
-        else:
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
+        self.__data = value
 
     @property
     def next_node(self):
@@ -36,10 +35,9 @@ class Node:
     def next_node(self, value):
         """Sets __next_node with value """
 
-        if value is None or isinstance(value, Node):
-            self.__next_node = value
-        else:
+        if value is not None or not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
+        self.__next_node = value
 
 
 class SinglyLinkedList:
@@ -67,13 +65,11 @@ class SinglyLinkedList:
     def __str__(self):
         """Returns a str format to print """
 
-        rep = ""
+        rep = []
         current = self.__head
 
         while current is not None:
-            if current is self.__head:
-                rep += str(current.data)
-            else:
-                rep += "\n" + str(current.data)
+            rep.append(str(current.data))
             current = current.next_node
-        return rep
+        return "\n".join(rep)
+

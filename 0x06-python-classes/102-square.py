@@ -48,11 +48,10 @@ class Square:
         """
         if type(value) is not int:
             raise TypeError("size must be an integer")
-        else:
-            if value < 0:
+
+        if value < 0:
                 raise ValueError("size must be >= 0")
-            else:
-                self.__size = value
+        self.__size = value
 
     def __lt__(self, other):
         """Compare if square is less than another by area

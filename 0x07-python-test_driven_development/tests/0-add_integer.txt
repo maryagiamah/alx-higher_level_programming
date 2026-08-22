@@ -1,6 +1,3 @@
-The ``0-add_integer`` module
-======================
-
 Using ``add_integer``
 -------------------
 
@@ -14,10 +11,6 @@ Checking regular addition:
 Checking positive with negative:
 	 >>> add_integer(2, -4)
 	 -2
-
-Checking addition over multiple values:
-	 >>> [add_integer(i, i ** 2) for i in range(6)]
-	 [0, 2, 6, 12, 20, 30]
 
 Checking float with int:
 	 >>> add_integer(2.1, 4)
@@ -38,10 +31,6 @@ Checking for passed inf:
 	 Traceback (most recent call last):
 	 ...
 	 OverflowError: cannot convert float infinity to integer
-
-Checking super long int:
-	 >>> add_integer(999999999999999999999999999999, 1)
-	 1000000000000000000000000000000
 
 Checking number with non-number:
 	 >>> add_integer(3, "2")

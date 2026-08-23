@@ -30,8 +30,7 @@ def matrix_divided(matrix, div):
 
         for i in row:
             if not isinstance(i, (int, float)):
-                raise TypeError(
-    "matrix must be a matrix (list of lists) of"
+                raise TypeError("matrix must be a matrix (list of lists) of " \
 "integers/floats")
 
 

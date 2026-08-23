@@ -130,7 +130,9 @@ Checking for div as negative:
 Checking for empty matrix:
 	 >>> matrix = []
 	 >>> matrix_divided(matrix, 1)
-	 []
+	 Traceback (most recent call last):
+         ...
+         TypeError: matrix must be a matrix (list of lists) of integers/floats
 	 >>> matrix
 	 []
 

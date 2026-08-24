@@ -3,19 +3,16 @@
 ====================================
 
 Imports the text_indentation func
-+++++++++++++++++++++++++++++++++
 
 	>>> text_indentation = __import__('5-text_indentation').text_indentation
 
 When text is sent as a normal string
-++++++++++++++++++++++++++++++++++++
 
 	>>> text_indentation("Holberton School")
 	Holberton School
 
 
 When text contains one of the characters  ., ? and :
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	>>> text_indentation("Holberton.School")
 	Holberton.
@@ -23,7 +20,6 @@ When text contains one of the characters  ., ? and :
 	School
 
 When text contains a mixture of all or multiples of any of the char ., ? and :
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 	>>> text_indentation("Holberton. School? How are you: John") #doctest:+NORMALIZE_WHITESPACE
 	Holberton.
@@ -35,7 +31,6 @@ When text contains a mixture of all or multiples of any of the char ., ? and :
 	John
 
 When text is not of  string type
-+++++++++++++++++++++++++++++++++
 
 	>>> text_indentation({"Holberton": "School"})
 	Traceback (most recent call last):
@@ -43,7 +38,6 @@ When text is not of  string type
 	TypeError: text must be a string
 
 When text contains a new line imbedded
-++++++++++++++++++++++++++++++++++++++
 
 	>>> text_indentation("Holb\nerton: Scho\nol?")
 	Holb
@@ -54,7 +48,6 @@ When text contains a new line imbedded
 	<BLANKLINE>
 
 When text-indentation does not recieve any input
-++++++++++++++++++++++++++++++++++++++++++++++++
 
 	>>> text_indentation()
 	Traceback (most recent call last):

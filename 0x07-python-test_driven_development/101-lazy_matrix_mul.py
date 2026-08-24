@@ -42,4 +42,4 @@ def lazy_matrix_mul(m_a, m_b):
     arr_a = np.array(m_a)
     arr_b = np.array(m_b)
 
-    return np.matmul(arr_a, arr_b).to_list()
+    return np.matmul(arr_a, arr_b).tolist()

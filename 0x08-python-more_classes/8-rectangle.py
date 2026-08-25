@@ -13,9 +13,9 @@ class Rectangle:
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """returns the biggest rectangle based on the area"""
-        if type(rect_1) is not Rectangle:
+        if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
-        if type(rect_2) is not Rectangle:
+        if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
         if rect_1.area() >= rect_2.area():
             return rect_1
@@ -70,13 +70,12 @@ class Rectangle:
             return 0
         return (self.__width * 2) + (self.__height * 2)
 
-    def __str__(self):
+        def __str__(self):
         """returns printable string representation of the rectangle"""
-        string = ""
-        if self.__width != 0 and self.__height != 0:
-            string += "\n".join(str(self.print_symbol) * self.__width
-                                for j in range(self.__height))
-        return string
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join(str(self.print_symbol) * self.__width
+                         for _ in range(self.__height))
 
     def __repr__(self):
         """returns a string representation of the rectangle for reproduction"""

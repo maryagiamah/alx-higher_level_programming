@@ -4,17 +4,17 @@ Rectangle = __import__('8-rectangle').Rectangle
 
 
 class Square(Rectangle):
-     '''Inherits Rectangle '''
+     """Inherits Rectangle """
      
      def __init__(self, size):
-          '''INIT METHOD'''
+          """INIT METHOD"""
          self.integer_validator('size', size)
          self.__size = size
               
     def area(self):
-        '''Area '''
+        """Area """
          return self.__size ** 2
 
      def __str__(self):
-         '''str '''
+         """str """
          return "[Rectangle] {}/{}".format(self.__size, self.__size)

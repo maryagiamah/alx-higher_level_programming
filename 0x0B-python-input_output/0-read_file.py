@@ -4,5 +4,5 @@
 
 def read_file(filename=""):
     """A func that prints content of a txt file"""
-    with open(filename, 'r', encoding='utf-8') as f:
-        print(r.read())
+    with open(filename, encoding='utf-8') as f:
+        print(f.read())

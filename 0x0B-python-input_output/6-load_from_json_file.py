@@ -3,7 +3,7 @@
 import json
 
 
-def load_from_json_file(filename)
+def load_from_json_file(filename):
     """DeSerialisation"""
 
     with open(filename, encoding="utf-8") as f:

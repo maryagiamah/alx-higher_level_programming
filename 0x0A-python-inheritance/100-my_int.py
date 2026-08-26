@@ -7,8 +7,8 @@ class MyInt(int):
 
     def __eq__(self, other):
         """Inverted to != """
-        return self != other
+        return int(self) != other
 
     def __ne__(self, other):
         """Inverted to == """
-        return self == other
+        return int(self) == other

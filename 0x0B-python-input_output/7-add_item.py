@@ -19,5 +19,5 @@ def add_item():
     else:
         curr_ob = []
 
-    curr_ob.extend(objs)
+    curr_ob.append(objs)
     save_to_json_file(curr_ob, filename)

@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Add obj items to file"""
-from pathlib import Path
 import sys
 import json
 
@@ -14,11 +13,9 @@ def add_item():
     objs = sys.argv[1:]
     filename = "add_item.json"
     try:
-        curr_ob = load_from_json_file(filename)
+        curr_ob = load_from_json_file(filename)  
     except:
-        Path(filename).touch()
         curr_ob = []
 
     curr_ob.extend(objs)
     save_to_json_file(curr_ob, filename)
-  

@@ -1,22 +1,24 @@
 #!/usr/bin/python3
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 """Add obj items to file"""
-from Pathlib import Path
+from pathlib import Path
 import sys
 import json
+
+load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
+save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 
 
 def add_item():
     """Add item to file"""
 
     objs = sys.argv[1:]
-    filename = sys.argv[0]
+    filename = "add_item.json"
     try:
-        ob = load_from_json_file(filename)
+        curr_ob = load_from_json_file(filename)
     except:
-        Path.(filename).touch()
+        Path(filename).touch()
+        curr_ob = []
 
-    
-     save_to_json_file(objs, filename)
+    curr_ob.extend(objs)
+    save_to_json_file(curr_ob, filename)
   

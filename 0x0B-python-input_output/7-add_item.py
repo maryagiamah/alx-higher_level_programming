@@ -13,9 +13,9 @@ objs = sys.argv[1:]
 filename = "add_item.json"
 
 try:
-    curr_obj = load_from_json_file(filename)
+    curr_ob = load_from_json_file(filename)
 except FileNotFoundError:
-    curr_obj = []
+    curr_ob = []
 
     curr_ob.extend(objs)
     save_to_json_file(curr_ob, filename)

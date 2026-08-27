@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-"""Add obj items to file"""
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
+"""Add obj items to file"""
 from Pathlib import Path
 import sys
 import json

@@ -14,5 +14,5 @@ try:
 except FileNotFoundError:
     curr_ob = []
 
-    curr_ob.extend(objs)
-    save_to_json_file(curr_ob, filename)
+curr_ob.extend(objs)
+save_to_json_file(curr_ob, filename)

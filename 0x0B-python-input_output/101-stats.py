@@ -3,54 +3,38 @@
 import sys
 
 
-stat_200, stat_301, stat_400, stat_401, stat_403, stat_404, stat_405, stat_500 = 0
+line_count = 0
+file_size = 0
 
-line_count, file_size = 0
+stat_code = {
+    "200": 0, "301": 0, "400": 0, "401": 0,
+    "403": 0, "404": 0, "405": 0, "500": 0
+}
+
+def print_stats():
+    """print_stats"""
+
+    print(f"File size: {file_size}")
+    for code in sorted(stat_code.keys()):
+        print(f"{code}: {stat_code[code]}")
 
 try:
     for line in sys.stdin:
-        if line[4] == "200":
-            stat_200 += 1
-        elif line[4] == "301";
-            stat_301 += 1
-        elif line[4] == "400":
-            stat_400 += 1
-        elif line[4] == "401":
-            stat_401 += 1
-        elif line[4] == "403":
-            stat_403 += 1
-        elif line[4] == "404"
-            stat_404 += 1
-        elif line[4] == "405":
-            stat_405 += 1
-        elif line[4] == "500":
-            stat_500 += 1
-        else:
-            continue
-
-        line_count += 1
-        file_size += line[5]
+        parts = line.split()
+        code = parts[-2]
  
-        if (line_count % 10) == 0:
-            print("File size: {file_size}".format)
+        if code in stat_code:
+            stat_code[code] += 1
+            line_count += 1
+            file_size += int(parts[-1])
+        else:
+            continue 
 
-            print("200: {stat_200}")
-            print("301: {stat_301}")
-            print("400: {stat_400}")
-            print("401: {stat_401}")
-            print("403: {stat_403}")
-            print("404: {stat_404}")
-            print("405: {stat_405}")
-            print("500: {stat_500}")
+        if (line_count % 10) == 0:
+            print_stats()
 
 except KeyboardInterrupt:
-            print("File size: {file_size}".format)
+    pass
 
-            print("200: {stat_200}")
-            print("301: {stat_301}")
-            print("400: {stat_400}")
-            print("401: {stat_401}")
-            print("403: {stat_403}")
-            print("404: {stat_404}")
-            print("405: {stat_405}")
-            print("500: {stat_500}")
+finally:
+    print_stats()

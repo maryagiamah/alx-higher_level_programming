@@ -16,7 +16,8 @@ def print_stats():
 
     print(f"File size: {file_size}")
     for code in sorted(stat_code.keys()):
-        print(f"{code}: {stat_code[code]}")
+        if stat_code[code] > 0:
+            print(f"{code}: {stat_code[code]}")
 
 try:
     for line in sys.stdin:

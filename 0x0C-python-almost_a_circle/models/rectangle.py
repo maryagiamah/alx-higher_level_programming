@@ -17,6 +17,10 @@ class Rectangle(Base):
         '''Area of Rectangle'''
         return self.__height * self.__width
 
+    def to_dictionary(self):
+        """To_dict"""
+        return self.__dict__
+
     def display(self):
         """Display rectangle method"""
         for _ in range(self.__y):

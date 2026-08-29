@@ -22,6 +22,10 @@ def print_stats():
 try:
     for line in sys.stdin:
         parts = line.split()
+ 
+        if len(parts) < 6:
+            continue 
+
         code = parts[-2]
  
         if code in stat_code:

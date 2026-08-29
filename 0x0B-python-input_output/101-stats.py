@@ -11,6 +11,7 @@ stat_code = {
     "403": 0, "404": 0, "405": 0, "500": 0
 }
 
+
 def print_stats():
     """print_stats"""
 
@@ -27,19 +28,17 @@ try:
             continue 
 
         code = parts[-2]
- 
+        line_count += 1
+        file_size += int(parts[-1])
+
         if code in stat_code:
             stat_code[code] += 1
-            line_count += 1
-            file_size += int(parts[-1])
         else:
-            continue 
+            continue
 
         if (line_count % 10) == 0:
             print_stats()
-
 except KeyboardInterrupt:
     pass
-
 finally:
     print_stats()

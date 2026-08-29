@@ -29,8 +29,8 @@ class Rectangle(Base):
         if args:
             attrs = ["id", "width", "height", "x", "y"]
             for k, v in enumerate(args):
-                setattr(self, attr[k], v)
-        if kwargs:
+                setattr(self, attrs[k], v)
+        elif kwargs:
             for k, v in kwargs.items():
                 setattr(self, k, v)
 

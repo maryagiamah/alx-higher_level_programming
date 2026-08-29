@@ -35,7 +35,6 @@ class Square(Rectangle):
             for k, v in kwargs.items():
                 setattr(self, k, v)
 
-
     def to_dictionary(self):
         """To_dict"""
         return {

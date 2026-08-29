@@ -23,9 +23,9 @@ def print_stats():
 try:
     for line in sys.stdin:
         parts = line.split()
- 
+
         if len(parts) < 6:
-            continue 
+            continue
 
         code = parts[-2]
         line_count += 1

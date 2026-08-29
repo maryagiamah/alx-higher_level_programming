@@ -27,13 +27,12 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """Update attributes with args or kwargs"""
         if args:
-            self.id, self.width, self.height, self.x, self.y = args
-        elif kwargs:
-            self.id = kwargs.get('id', self.id)
-            self.width = kwargs.get('width', self.width)
-            self.height = kwargs.get('height', self.height)
-            self.x = kwargs.get('x', self.x)
-            self.y = kwargs.get('y', self.y)
+            attrs = ["id", "width", "height", "x", "y"]
+            for k, v in enumerate(args):
+                setattr(self, attr[k], v)
+        if kwargs:
+            for k, v in kwargs.items():
+                setattr(self, k, v)
 
     def __str__(self):
         """ Str implementation """

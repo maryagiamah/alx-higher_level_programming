@@ -2,7 +2,6 @@
 """Parse Line"""
 import sys
 
-
 line_count = 0
 file_size = 0
 
@@ -19,6 +18,7 @@ def print_stats():
     for code in sorted(stat_code.keys()):
         if stat_code[code] > 0:
             print(f"{code}: {stat_code[code]}")
+
 
 try:
     for line in sys.stdin:

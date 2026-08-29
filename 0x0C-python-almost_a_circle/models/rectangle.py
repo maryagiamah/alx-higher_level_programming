@@ -21,12 +21,8 @@ class Rectangle(Base):
         """Display rectangle method"""
         for _ in range(self.__x):
             print()
-        for i in range(self.__height):
-            for m in range(self.__y):
-                print(" ", end="")
-            for j in range(self.__width):
-                print("#", end="")
-            print()
+        for _ in range(self.__height):
+            print(" " * self.__x + "#" * self.__width)
 
     def update(self, *args, **kwargs):
         """Update attributes with args or kwargs"""

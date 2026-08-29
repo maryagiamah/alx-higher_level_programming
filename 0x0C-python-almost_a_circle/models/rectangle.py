@@ -19,7 +19,7 @@ class Rectangle(Base):
 
     def display(self):
         """Display rectangle method"""
-        for _ in range(self.__x):
+        for _ in range(self.__y):
             print()
         for _ in range(self.__height):
             print(" " * self.__x + "#" * self.__width)

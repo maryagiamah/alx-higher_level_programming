@@ -29,7 +29,7 @@ class Base:
         """Save to file"""
 
         filename = f"{cls.__name__}.json"
-        x = to_json_string(list_objs)
+        x = cls.to_json_string(list_objs)
 
-        with open(filename, encoding="utf-8") as f:
+        with open(filename, w, encoding="utf-8") as f:
             json.dump(x, filename)

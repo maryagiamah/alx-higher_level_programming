@@ -29,7 +29,11 @@ class Base:
         """Save to file"""
 
         filename = f"{cls.__name__}.json"
-        x = cls.to_json_string(list_objs)
+        list_dicts = None 
+
+        if list_objs:
+            list_dicts = [obj.to_dictionary() for obj in list_objs]
+            x = cls.to_json_string(list_dicts)
 
         with open(filename, w, encoding="utf-8") as f:
             json.dump(x, filename)

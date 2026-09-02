@@ -27,5 +27,9 @@ class Base:
     @classmethod
     def save_to_file(cls, list_objs):
         """Save to file"""
-        if not list_objs:
-           jsob
+
+        filename = f"{cls.__name__}.json"
+        x = to_json_string(list_objs)
+
+        with open(filename, encoding="utf-8") as f:
+            json.dump(x, filename)

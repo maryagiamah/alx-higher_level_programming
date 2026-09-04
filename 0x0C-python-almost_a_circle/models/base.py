@@ -46,7 +46,7 @@ class Base:
 
         return json.loads(json_string)
 
-    @classmethid
+    @classmethod
     def create(cls, **dictionary):
         """Create"""
         new_obj = None 

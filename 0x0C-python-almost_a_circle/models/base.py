@@ -65,6 +65,8 @@ class Base:
 
         try:
             with open(filename, encoding="utf-8") as f:
-               obj_strin = f.read()
+               obj_strings = f.read()
+            list_dicts = cls.from_json_string(obj_string)
+        except :
 
            

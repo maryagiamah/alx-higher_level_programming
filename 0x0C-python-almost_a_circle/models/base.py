@@ -44,6 +44,6 @@ class Base:
         if not json_string or json_string == "":
             return []
 
-        return json.load(json_string)
+        return json.loads(json_string)
 
             

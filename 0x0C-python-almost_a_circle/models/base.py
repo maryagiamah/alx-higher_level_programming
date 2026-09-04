@@ -48,3 +48,5 @@ class Base:
 
     def create(cls, **dictionary):
         """Create"""
+        if size in **dictionary.keys():
+            Square()

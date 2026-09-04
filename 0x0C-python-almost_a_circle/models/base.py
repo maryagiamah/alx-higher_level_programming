@@ -48,5 +48,10 @@ class Base:
 
     def create(cls, **dictionary):
         """Create"""
-        if size in **dictionary.keys():
-            Square()
+        new_obj = None 
+        if cls.__name__ == "Square":
+            new_obj = cls(5, 6, 7)
+        else:
+            new_obj = cls(5, 6, 7, 8)
+        new_obj.update(**dictionary)
+        return new_obj

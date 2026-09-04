@@ -50,8 +50,9 @@ class Base:
         """Create"""
         new_obj = None 
         if cls.__name__ == "Square":
-            new_obj = cls(5, 6, 7)
+            new_obj = cls(5)
         else:
-            new_obj = cls(5, 6, 7, 8)
+            new_obj = cls(5, 6)
+
         new_obj.update(**dictionary)
         return new_obj

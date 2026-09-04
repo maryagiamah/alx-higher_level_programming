@@ -49,7 +49,7 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """Create"""
-        new_obj = None 
+        new_obj = None
         if cls.__name__ == "Square":
             new_obj = cls(5)
         else:

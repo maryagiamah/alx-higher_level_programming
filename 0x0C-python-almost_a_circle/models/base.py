@@ -33,7 +33,8 @@ class Base:
 
         if list_objs:
             list_dicts = [obj.to_dictionary() for obj in list_objs]
-            x = cls.to_json_string(list_dicts)
+
+        x = cls.to_json_string(list_dicts)
 
         with open(filename, w, encoding="utf-8") as f:
             json.dump(x, filename)

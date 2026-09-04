@@ -57,3 +57,14 @@ class Base:
 
         new_obj.update(**dictionary)
         return new_obj
+
+    @classmethod
+    def load_from_file(cls):
+        """Load from file"""
+        filename = f"{cls.__name__}.json"
+
+        try:
+            with open(filename, encoding="utf-8") as f:
+               obj_strin = f.read()
+
+           

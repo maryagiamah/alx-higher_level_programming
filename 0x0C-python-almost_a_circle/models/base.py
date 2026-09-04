@@ -29,7 +29,7 @@ class Base:
         """Save to file"""
 
         filename = f"{cls.__name__}.json"
-        list_dicts = None 
+        list_dicts = None
 
         if list_objs:
             list_dicts = [obj.to_dictionary() for obj in list_objs]

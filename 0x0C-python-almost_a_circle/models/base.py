@@ -45,3 +45,6 @@ class Base:
             return []
 
         return json.loads(json_string)
+
+    def create(cls, **dictionary):
+        """Create"""

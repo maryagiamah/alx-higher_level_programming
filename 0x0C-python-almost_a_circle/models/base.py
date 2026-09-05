@@ -70,3 +70,10 @@ class Base:
             return [cls.create(**obj) for obj in list_dicts]
         except FileNotFoundError:
             return []
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """Save to CSV file"""
+        filename = f"{cls.__name__}.csv"
+
+        

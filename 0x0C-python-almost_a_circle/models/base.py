@@ -67,6 +67,6 @@ class Base:
             with open(filename, encoding="utf-8") as f:
                obj_strings = f.read()
             list_dicts = cls.from_json_string(obj_string)
-        except :
-
-           
+            return [cls.create(**obj) for obj in list_dicts]
+        except FileNotFoundError:
+            return []

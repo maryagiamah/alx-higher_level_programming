@@ -76,4 +76,8 @@ class Base:
         """Save to CSV file"""
         filename = f"{cls.__name__}.csv"
 
-        
+        with open(filename, 'w') as f:
+            writer = csv.writer(filename)
+
+            if li
+                

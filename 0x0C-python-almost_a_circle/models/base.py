@@ -79,5 +79,8 @@ class Base:
         with open(filename, 'w') as f:
             writer = csv.writer(filename)
 
-            if li
-                
+            if not list_objs:
+                writer.writerow([])
+            for obj in list_objs:
+                if cls.__name__ == "Square":
+                    writer.writerow([obj.id, obj.size, obj.x, obj.y])

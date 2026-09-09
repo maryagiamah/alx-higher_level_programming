@@ -77,10 +77,21 @@ class Base:
         filename = f"{cls.__name__}.csv"
 
         with open(filename, 'w') as f:
-            writer = csv.writer(filename)
+            writer = csv.writer(f)
 
             if not list_objs:
                 writer.writerow([])
             for obj in list_objs:
                 if cls.__name__ == "Square":
                     writer.writerow([obj.id, obj.size, obj.x, obj.y])
+                else:
+                    writer.writerow([obj.id, obj.width, obj.height, obj.x, obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """Load from csv"""
+        filename = f"{cls.__name__}.csv"
+
+        with open(filename, newline='') as f:
+            
+            reader = csv.reader(f)
